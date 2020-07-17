@@ -1,0 +1,304 @@
+@charset "utf-8";
+
+#container{
+    width: 90%;
+    height: auto;
+    margin: auto;
+    display: grid;
+    grid-template-areas: 
+    'cabecalho cabecalho cabecalho'
+    'calculadora informativo informativo';
+
+    grid-gap: 50px;
+}
+
+#cabecalho{
+    grid-area: cabecalho;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#cabecalho img{
+    position: relative;
+    width: 15%;
+    height: auto;
+    margin: auto;
+}
+
+#cabecalho h1{
+    color: rgb(46, 56, 49);
+    font-size: 45pt;
+    font-weight: 800;
+    font-family: 'Raleway', sans-serif;
+}
+
+#cabecalho nav {
+    position: relative;
+    margin: auto;
+}
+
+#cabecalho nav ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+}
+
+#cabecalho nav ul li {
+    width: 150px;
+    height: auto;
+    margin: 1%;
+    padding: 1%;
+    text-align: center;
+}
+
+#cabecalho nav ul li:hover a{
+    color: rgb(128, 255, 0);
+}
+
+#cabecalho nav ul li a{
+    width: 150px;
+    height: 45px;
+    color: rgb(46, 56, 49);
+    text-decoration: none;
+    font-size: 15pt;
+    font-weight: 800;
+    font-family: 'Raleway', sans-serif;
+    transition: 0.3s;
+}
+
+#calculadora{
+    grid-area: calculadora;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-family: 'Raleway', sans-serif;
+}
+
+#calculadora form#calc{
+    position: relative;
+    height: auto;
+    margin: auto;
+}
+
+#calculadora form h1{
+    position: relative;
+    width: 90%;
+    height: auto;
+    margin-left: 2%;
+    font-size: 25pt;
+    color: rgba(46, 56, 49, 0.6);
+}
+
+#calculadora form div.radio{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: initial;
+    padding: 3%;
+}
+#calculadora form div.radio label{
+    margin-right: 8%;
+    color: rgb(46, 56, 49);
+}
+
+#calculadora form input[type='radio']:after {
+    width: 10px;
+    height: 10px;
+    border-radius: 15px;
+    top: -1px;
+    left: 0;
+    position: relative;
+    background-color: transparent;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid rgb(46, 56, 49);
+}
+
+#calculadora form input[type='radio']:checked:after {
+    width: 10px;
+    height: 10px;
+    border-radius: 15px;
+    top: -1px;
+    left: 0;
+    position: relative;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid rgb(46, 56, 49);
+    background-color: rgb(128, 255, 0);
+}
+
+#calculadora form div.pesoAltura{
+    margin-top: 5%;
+    color: rgb(46, 56, 49);
+}
+
+#calculadora form div.pesoAltura label{
+    font-size: 15pt;
+    margin-left: 5%;
+    color: rgb(46, 56, 49);
+}
+
+#calculadora form div.pesoAltura input{
+    padding-top: 5%;
+    padding-bottom: 5%;
+    padding-left: 10%;
+    font-size: 15pt;
+    border: none;
+    border-radius: 10px;
+    color: rgb(46, 56, 49);
+    background-color: rgba(46, 56, 49, 0.2);
+}
+
+#calculadora form div.pesoAltura p{
+    font-size: 10pt;
+    color: rgba(46, 56, 49, 0.6);
+    margin: auto auto auto 5%;
+}
+
+#calculadora form div.button{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: initial;
+    padding-top: 5%;
+    padding-left: 5%;
+}
+
+#calculadora form div.button button{
+    width: 100px;
+    font-size: 13pt;
+    font-weight: 700;
+    margin-right: 5%;
+    padding: 3%;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(128, 255, 0);
+    outline: none;
+}
+
+#calculadora form div#resultado{
+    width: 70%;
+    margin: 5% 0;
+    padding: 5%;
+    border-radius: 20px;
+    background-color: rgba(46, 56, 49, 0.2);
+}
+
+#calculadora form div#resultado p{
+    margin: 0;
+    font-size: 25pt;
+    font-weight: 800;
+    color: rgba(46, 56, 49, 0.6);
+}
+
+#calculadora form div#resultado button{
+    margin: 5% auto auto 0;
+    padding: 3%;
+    font-size: 15pt;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 1);
+    border: none;
+    border-radius: 5px;
+    background-color: royalblue;
+    outline: none;
+}
+
+#propagandas{
+    grid-area: informativo;
+    align-items: center;
+    justify-content: center;
+}
+
+#propagandas{
+    padding: 2%;
+    font-family: 'Raleway', sans-serif;
+}
+
+#propagandas h1{
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin: auto auto 5% auto;
+    text-align: left;
+    font-size: 25pt;
+    color: rgba(46, 56, 49, 0.6);
+}
+
+#propagandas h2{
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin: 5% auto auto auto;
+    text-align: left;
+    font-size: 18pt;
+    color: rgba(46, 56, 49, 0.6);
+}
+
+#propagandas p{
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin: auto;
+    padding: 1%;
+    text-align: justify;
+    font-size: 13pt;
+    color: rgba(46, 56, 49, 0.8);
+}
+
+#propagandas a{
+    text-decoration: none;
+    font-weight: 700;
+    color: rgba(46, 56, 49, 1);
+    transition: 0.3s;
+}
+
+#propagandas a:hover{
+    color: rgb(128, 255, 0);
+}
+
+#propagandas table{
+    position: relative;
+    height: auto;
+    margin: auto;
+}
+
+#propagandas table td{
+    position: relative;
+    padding: 7px;
+    text-align: center;
+    background-color: rgba(46, 56, 49, 0.2);
+}
+
+#propagandas table td:hover{
+    color: rgba(255, 255, 255, 1);
+    background-color: rgba(46, 56, 49, 0.6);
+}
+
+#propagandas table td.peso{
+    background-color: rgba(46, 56, 49, 0.6);
+}
+
+#propagandas table td.peso p{
+    width: 150px;
+    height: auto;
+    color: rgba(255, 255, 255, 1);
+    font-weight: 700;
+    text-align: center;
+}
+
+#propagandas table td.altura{
+    background-color: rgba(46, 56, 49, 0.6);
+}
+
+#propagandas table td.altura p{
+    width: 250px;
+    height: auto;
+    color: rgba(255, 255, 255, 1);
+    font-weight: 700;
+    text-align: center;
+}

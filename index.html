@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Calc IMC</title>
+
+    <!--Link Favicon-->
+    <link rel="shortcut icon" href="img/Logo_Icon_System_borda.png" type="image/x-icon">
+
+    <!--Link Css-->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!--Link Js-->
+    <script src="js/script.js"></script>
+
+    <!--Link Fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body onload="rotate()">
+    <div id="container">
+
+        <header id="cabecalho">
+            <img id="logo" src="img/Logo_Icon_System_borda.png" alt="" onclick="rotate2()">
+
+            <h1>Calc - IMC</h1>
+
+            <nav>
+                <ul>
+                    <li><a href="">Beleza</a></li>
+                    <li><a href="">Acessórios</a></li>
+                    <li><a href="">Fitness</a></li>
+                    <li><a href="">Suplementos</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section id="calculadora">
+            <form id="calc" action="">
+
+                <h1>Calculadora IMC</h1>
+
+                <div class="radio">
+                    <input type="radio" name="sexo" id="M" value="masculino">
+                    <label for="M">Masculino</label>
+
+                    <input type="radio" name="sexo" id="F" value="feminino" checked>
+                    <label for="F">Feminino</label>
+                </div>
+
+                <div class="pesoAltura">
+                    <label for="altura">Altura</label>
+                    <br>
+                    <input type="number" name="altura" id="altura" placeholder="1,80">
+                    <p>Altura maxima é de 3mt</p>
+                    <br>
+                    <label for="peso">Peso</label>
+                    <br>
+                    <input type="number" name="peso" id="peso" placeholder="90">
+                    <p>Peso maximo 250kg</p>
+                </div>
+
+                <div class="button">
+                    <button type="button" onclick="calculadora(), focusScrollMethod()">Calcular</button>
+                    <button type="reset" onclick="limpar(),  focusScrollMethod()">Limpar</button>
+                </div>
+
+                <div id="resultado">
+
+                </div>
+
+            </form>
+        </section>
+
+        <section id="propagandas">
+            <div id="conteudoInicial">
+                <h1> O que é o índice de massa corporal (IMC)?</h1>
+                <p>O índice de massa corporal (IMC) é uma medida internacional usada para calcular se uma pessoa está no
+                    peso ideal. Desenvolvido pelo polímata <a
+                        href="https://pt.wikipedia.org/wiki/Adolphe_Qu%C3%A9telet">Lambert Quételet</a> no fim do século
+                    XIX, trata-se de um método fácil e rápido para a avaliação do nível de gordura de cada pessoa,
+                    sendo, por isso, um preditor internacional de obesidade adotado pela Organização Mundial da Saúde
+                    (OMS).</p>
+
+                <p>O IMC é determinado pela divisão da massa do indivíduo pelo quadrado de sua altura, em que a massa
+                    está em quilogramas e a altura em metros.</p>
+
+                <p><strong>IMC = peso (em quilos) ÷ altura² (em metros)</strong></p>
+
+                <p>Os resultados do IMC são interpretados da seguinte forma:</p>
+
+                <ul>
+                    <li>Baixo peso muito grave = abaixo de 16 kg/m².</li>
+                    <li>Baixo peso grave = entre 16 e 16,99 kg/m².</li>
+                    <li>Baixo peso = entre 17 e 18,49 kg/m².</li>
+                    <li>Peso normal = entre 18,50 e 24,99 kg/m².</li>
+                    <li>Sobrepeso = entre 25 e 29,99 kg/m².</li>
+                    <li>Obesidade grau I = entre 30 e 34,99 kg/m².</li>
+                    <li>Obesidade grau II = entre 35 e 39,99 kg/m².</li>
+                    <li>Obesidade grau III (<strong>obesidade mórbida</strong>) = maior que 40 kg/m².</li>
+                </ul>
+
+                <h2>Na tabela abaixo, encontre o seu IMC de acordo com sua altura e peso.</h2>
+
+                <table>
+
+                    <tr>
+                        <td rowspan="21" class="peso">
+                            <p style="transform: rotate(-90deg);">Peso (em kg)</p>
+                        </td>
+                        <td colspan="12" class="altura">
+                            <p>Altura (em metros)</p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="altura"></td>
+                        <td class="altura">1,5</td>
+                        <td class="altura">1,55</td>
+                        <td class="altura">1,6</td>
+                        <td class="altura">1,65</td>
+                        <td class="altura">1,7</td>
+                        <td class="altura">1,75</td>
+                        <td class="altura">1,8</td>
+                        <td class="altura">1,85</td>
+                        <td class="altura">1,9</td>
+                        <td class="altura">1,95</td>
+                        <td class="altura">2</td>
+                    </tr>
+
+                    <tr>
+                        <td class="peso">50</td>
+                        <td>22,22</td>
+                        <td>20,81</td>
+                        <td>19,53</td>
+                        <td>18,37</td>
+                        <td>17,30</td>
+                        <td>16,33</td>
+                        <td>15,43</td>
+                        <td>14,61</td>
+                        <td>13,85</td>
+                        <td>13,15</td>
+                        <td>12,50</td>
+                    </tr>
+
+                    <tr>
+                        <td class="peso">55</td>
+                        <td>24,44</td>
+                        <td>22,89</td>
+                        <td>21,48</td>
+                        <td>20,20</td>
+                        <td>19,03</td>
+                        <td>17,96</td>
+                        <td>16,98</td>
+                        <td>16,07</td>
+                        <td>15,24</td>
+                        <td>14,46</td>
+                        <td>13,75</td>
+                    </tr>
+
+                    <tr>
+                        <td class="peso"> 60</td>
+                        <td>26,67</td>
+                        <td>24,97</td>
+                        <td>23,44</td>
+                        <td>22,04</td>
+                        <td>20,76</td>
+                        <td>19,59</td>
+                        <td>18,52</td>
+                        <td>17,53</td>
+                        <td>16,62</td>
+                        <td>15,78</td>
+                        <td>15,00</td>
+                    </tr>
+
+                    <tr>
+                        <td class="peso">65</td>
+                        <td>28,89</td>
+                        <td>27,06</td>
+                        <td>25,39</td>
+                        <td>23,88</td>
+                        <td>22,49</td>
+                        <td>21,22</td>
+                        <td>20,06</td>
+                        <td>18,99</td>
+                        <td>18,01</td>
+                        <td>17,09</td>
+                        <td>16,25</td>
+                    </tr>
+
+                    <tr>
+                        <td class="peso">70</td>
+                        <td>31,11</td>
+                        <td>29,14</td>
+                        <td>27,34</td>
+                        <td>25,71</td>
+                        <td>24,22</td>
+                        <td>22,86</td>
+                        <td>21,60</td>
+                        <td>20,45</td>
+                        <td>19,39</td>
+                        <td>18,41</td>
+                        <td>17,50</td>
+                    </tr>
+
+                    <tr>
+                        <td class="peso">75</td>
+                        <td>33,33</td>
+                        <td>31,22</td>
+                        <td>29,30</td>
+                        <td>27,55</td>
+                        <td>25,95</td>
+                        <td>24,49</td>
+                        <td>23,15</td>
+                        <td>21,91</td>
+                        <td>20,78</td>
+                        <td>19,72</td>
+                        <td>18,75</td>
+                    </tr>
+
+                    <tr>
+                        <td class="peso"> 80</td>
+                        <td>35,56</td>
+                        <td>33,30</td>
+                        <td>31,25</td>
+                        <td>29,38</td>
+                        <td>27,68</td>
+                        <td>26,12</td>
+                        <td>24,69</td>
+                        <td>23,37</td>
+                        <td>22,16</td>
+                        <td>21,04</td>
+                        <td>20,00</td>
+                    </tr>
+
+                    <tr>
+                        <td class="peso">85</td>
+                        <td>37,78</td>
+                        <td>35,38</td>
+                        <td>33,20</td>
+                        <td>31,22</td>
+                        <td>29,41</td>
+                        <td>27,76</td>
+                        <td>26,23</td>
+                        <td>24,84</td>
+                        <td>23,55</td>
+                        <td>22,35</td>
+                        <td>21,25</td>
+                    </tr>
+
+                    <tr>
+                        <td class="peso">90</td>
+                        <td>40,00</td>
+                        <td>37,46</td>
+                        <td>35,16</td>
+                        <td>33,06</td>
+                        <td>31,14</td>
+                        <td>29,39</td>
+                        <td>27,78</td>
+                        <td>26,30</td>
+                        <td>24,93</td>
+                        <td>23,67</td>
+                        <td>22,50</td>
+                    </tr>
+
+                    <tr>
+                        <td class="peso">95</td>
+                        <td>42,22</td>
+                        <td>39,54</td>
+                        <td>37,11</td>
+                        <td>34,89</td>
+                        <td>32,87</td>
+                        <td>31,02</td>
+                        <td>29,32</td>
+                        <td>27,76</td>
+                        <td>26,32</td>
+                        <td>24,98</td>
+                        <td>23,75</td>
+                    </tr>
+
+                    <tr>
+                        <td class="peso">100</td>
+                        <td>44,44</td>
+                        <td>41,62</td>
+                        <td>39,06</td>
+                        <td>36,73</td>
+                        <td>34,60</td>
+                        <td>32,65</td>
+                        <td>30,86</td>
+                        <td>29,22</td>
+                        <td>27,70</td>
+                        <td>26,30</td>
+                        <td>25,00</td>
+                    </tr>
+
+                    <tr>
+                        <td class="peso">105</td>
+                        <td>46,67</td>
+                        <td>43,70</td>
+                        <td>41,02</td>
+                        <td>38,57</td>
+                        <td>36,33</td>
+                        <td>34,29</td>
+                        <td>32,41</td>
+                        <td>30,68</td>
+                        <td>29,09</td>
+                        <td>27,61</td>
+                        <td>26,25</td>
+                    </tr>
+
+                    <tr>
+                        <td class="peso">110</td>
+                        <td>48,89</td>
+                        <td>45,79</td>
+                        <td>42,97</td>
+                        <td>40,40</td>
+                        <td>38,06</td>
+                        <td>35,92</td>
+                        <td>33,95</td>
+                        <td>32,14</td>
+                        <td>30,47</td>
+                        <td>28,93</td>
+                        <td>27,50</td>
+                    </tr>
+
+                    <tr>
+                        <td class="peso">115</td>
+                        <td>51,11</td>
+                        <td>47,87</td>
+                        <td>44,92</td>
+                        <td>42,24</td>
+                        <td>39,79</td>
+                        <td>37,55</td>
+                        <td>35,49</td>
+                        <td>33,60</td>
+                        <td>31,86</td>
+                        <td>30,24</td>
+                        <td>28,75</td>
+                    </tr>
+
+                    <tr>
+                        <td class="peso">120</td>
+                        <td>53,33</td>
+                        <td>49,95</td>
+                        <td>46,88</td>
+                        <td>44,08</td>
+                        <td>41,52</td>
+                        <td>39,18</td>
+                        <td>37,04</td>
+                        <td>35,06</td>
+                        <td>33,24</td>
+                        <td>31,56</td>
+                        <td>30,00</td>
+                    </tr>
+
+                    <tr>
+                        <td class="peso">125</td>
+                        <td>55,56</td>
+                        <td>52,03</td>
+                        <td>48,83</td>
+                        <td>45,91</td>
+                        <td>43,25</td>
+                        <td>40,82</td>
+                        <td>38,58</td>
+                        <td>36,52</td>
+                        <td>34,63</td>
+                        <td>32,87</td>
+                        <td>31,25</td>
+                    </tr>
+
+                    <tr>
+                        <td class="peso">130</td>
+                        <td>57,78</td>
+                        <td>54,11</td>
+                        <td>50,78</td>
+                        <td>47,75</td>
+                        <td>44,98</td>
+                        <td>42,45</td>
+                        <td>40,12</td>
+                        <td>37,98</td>
+                        <td>36,01</td>
+                        <td>34,19</td>
+                        <td>32,50</td>
+                    </tr>
+
+                    <tr>
+                        <td class="peso">135</td>
+                        <td>60,00</td>
+                        <td>56,19</td>
+                        <td>52,73</td>
+                        <td>49,59</td>
+                        <td>46,71</td>
+                        <td>44,08</td>
+                        <td>41,67</td>
+                        <td>39,44</td>
+                        <td>37,40</td>
+                        <td>35,50</td>
+                        <td>33,75</td>
+                    </tr>
+
+                    <tr>
+                        <td class="peso">140</td>
+                        <td>62,22</td>
+                        <td>58,27</td>
+                        <td>54,69</td>
+                        <td>51,42</td>
+                        <td>48,44</td>
+                        <td>45,71</td>
+                        <td>43,21</td>
+                        <td>40,91</td>
+                        <td>38,78</td>
+                        <td>36,82</td>
+                        <td>35,00</td>
+                    </tr>
+
+                </table>
+
+
+                <h2>Índice considerado ideal</h2>
+
+                <p>Para adultos, um IMC entre 20 e 22 indica a quantidade ideal, saudável de gordura corporal, o que
+                    está associado com maior tempo de vida e menor incidência de doenças graves. Coincidentemente, essa
+                    relação é o que muitas pessoas consideram ser «o mais esteticamente atraente».[1] Entretanto, é
+                    importante ressaltar que um índice entre 22 e 25 também é considerado um intervalo bastante
+                    aceitável, pois está igualmente associado à boa saúde.[1]</p>
+
+                <p>Pesquisas recentes apontaram que um IMC entre 23 e 25 é considerado o que garante taxas de
+                    sobrevivência mais longas aos indivíduos.[2][3] O autor Charles E. Phelps corrobora tal informação
+                    ao afirmar em um de seus livros:</p>
+
+                <p>«Tanto para mulheres como para homens, a melhor taxa de sobrevivência aparece nos grupos de pessoas
+                    cujo IMC está entre 23 e 25. O risco relativo aumenta para pessoas com números mais altos ou mais
+                    baixos que esse índice massa corporal tido como “mais seguro”.»[3]</p>
+
+                <h2>IMC em Crianças e Adolescentes</h2>
+
+                <p> As crianças naturalmente começam a vida com um alto índice de gordura corpórea, mas vão ficando mais
+                    magras conforme envelhecem. Além disso, também há diferenças entre a composição corporal de meninos
+                    e meninas. E foi para poder levar todas essas diferenças em consideração que os cientistas criaram
+                    um IMC especialmente para as crianças .</p>
+
+                <p>Os médicos e demais profissionais nutricionistas usam um conjunto de gráficos de crescimento para
+                    seguir o desenvolvimento de crianças e jovens adultos dos dois aos 20 anos de idade. O IMC por idade
+                    utiliza a altura, peso e idade de uma criança para determinar quanta gordura corporal ele ou ela tem
+                    e compara os resultados com os de outras crianças da mesma idade e gênero. Ele pode ajudar a prever
+                    se as crianças terão risco de ficar acima do peso quando estiverem mais velhas.</p>
+
+                <p>Cada gráfico contém um conjunto de curvas que indica o percentil da criança. Por exemplo, se um
+                    garoto de 15 anos de idade está no percentil 75, isso significa que 75% dos garotos da mesma idade
+                    têm um IMC mais baixo. Ele tem o peso normal e, embora seu IMC mude durante seu crescimento, ele
+                    pode se manter nas proximidades do mesmo percentil e permanecer com um peso normal.</p>
+
+                <p>A faixa de IMC normal pode ficar mais alta para as meninas conforme elas vão amadurecendo, já que as
+                    adolescentes normalmente têm mais gordura corporal do que os adolescentes. Um garoto e uma garota da
+                    mesma idade podem ter o mesmo IMC, mas a garota pode estar no peso normal enquanto o garoto pode
+                    estar correndo risco de ficar acima do peso.</p>
+
+                <p>Os médicos dizem ser mais importante acompanhar o IMC das crianças ao longo do tempo do que olhar um
+                    número individual, pois elas podem passar por estirões de crescimento.</p>
+
+                <p>A tabela com os valores do IMC para Adolescentes entre 10 e 19, conforme fora anteriormente citado é
+                    baseado em percentis:
+                </p>
+
+                <p>Baixo Peso = Percentil menor que 5.</p>
+                <p>Peso Normal (Eutrófico) = Percentil igual a 5 e menor que 85.</p>
+                <p>Sobrepeso = Percentil igual ou maior que 85.[4]</p>
+
+                <h2>Limitações do IMC</h2>
+
+                <p>Há alguns problemas em usar o IMC para determinar se uma pessoa está acima do peso. Por exemplo,
+                    pessoas musculosas podem ter um Índice de Massa Corporal alto e não serem gordas. O IMC também não é
+                    aplicável para crianças, sendo que precisa de gráficos específicos. Além disso, não é aplicável para
+                    idosos, para os quais se aplica classificação diferenciada.</p>
+
+                <p>Ou seja, podemos usar o IMC com algumas ressalvas, exceto para pessoas que praticam musculação, onde
+                    o cálculo de percentual de gordura é muito mais condizente com a realidade[5].</p>
+
+                <p>Para crianças e adolescentes de até 15 anos a fórmula do IMC continua sendo a mesma, só os valores de
+                    referência são diferenciados.</p>
+
+                <p>O IMC é o valor de massa corporal, que as diferenças raciais e étnicas têm sobre o Índice de Massa
+                    Corporal. Por exemplo, um grupo de assessoramento à Organização Mundial de Saúde concluiu que
+                    pessoas de origem asiática poderiam ser consideradas acima do peso com um IMC de apenas 25.</p>
+
+                <h2>IMC para pessoas acima de 60 anos</h2>
+
+                <p>No caso dos idosos (acima de 60 anos) também, temos nesses casos tabelas de referência adequados[6].
+                    Internacionalmente ainda não existe um consenso sobre o padrão de IMC para pessoas com mais de 60
+                    anos. No entanto, o Ministério da Saúde no Brasil, adota e recomenda o padrão de Lipschitz. Ou seja,
+                    valores abaixo de 21,9 considera-se peso baixo. Assim como, a partir de 27, entende-se que a pessoa
+                    tem sobrepeso. O peso adequado para essa idade seria entre 22 e 26,9 [7].</p>
+
+                <p>O IMC para idosos deve ser diferente em decorrência da mudança da composição corporal ao longo do
+                    tempo. Isso ocorre devido a vários fatores tais como: diminuição da massa muscular, assim como da
+                    água corporal, e também um aumento da gordura corporal, principalmente na região abdominal. A
+                    própria osteoporose, comum nessa faixa de idade, interfere no cálculo do IMC específico da terceira
+                    idade[7].</p>
+
+                <a href="https://pt.wikipedia.org/wiki/%C3%8Dndice_de_massa_corporal">Conteúdo informativo retirado da
+                    Wikipedia.</a>
+            </div>
+        </section>
+
+    </div>
+</body>
+
+</html>
